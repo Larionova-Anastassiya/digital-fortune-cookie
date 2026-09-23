@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Fortune Cookie</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body data-mood="{{ mood }}">
+
+    <main class="page">
+
+        <section class="fortune-card">
+
+            <div class="eyebrow">
+                DIGITAL ORACLE
+            </div>
+
+            <h1>
+                Digital
+                <span>Fortune Cookie</span>
+            </h1>
+
+            <p class="subtitle">
+                Somewhere inside this cookie,
+                your future is waiting.
+            </p>
+
+            <div class="cookie"
+                 id="cookie"
+                 aria-hidden="true">
+                
+            </div>
+
+            <div class="initial-state"
+                 id="initial-state">
+                <button class="fortune-button"
+                        id="open-button">
+                    OPEN YOUR FORTUNE
+                </button>
+            </div>
+
+            <div class="result hidden"
+                 id="result">
+                <p class="result-label">
+                     YOUR FORTUNE 
+                </p>
+
+                <blockquote id="fortune-text">
+                </blockquote>
+
+                <p class="fortune-id"
+                   id="fortune-id">
+                </p>
+
+                <button class="secondary-button"
+                        id="another-button">
+                    OPEN ANOTHER
+                </button>
+            </div>
+
+            <div class="mode">
+                <span class="status-dot"></span>
+
+                MODE:
+                <strong>
+                    {{ mood | upper }}
+                </strong>
+            </div>
+
+        </section>
+
+        <p class="footer">
+            Python &middot; Flask &middot; Docker
+        </p>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
